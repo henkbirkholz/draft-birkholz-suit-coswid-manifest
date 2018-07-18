@@ -65,7 +65,7 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  SUIT Manifest Extension . . . . . . . . . . . . . . . . . . .   2
-   3.  SUIT Manifest Resource Data Definition  . . . . . . . . . . .   2
+   3.  SUIT Manifest Resource Data Definition  . . . . . . . . . . .   3
    4.  Future Updates  . . . . . . . . . . . . . . . . . . . . . . .   5
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
    6.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .   5
@@ -89,6 +89,12 @@ Table of Contents
    CDDL extension points to add SUIT information elements to the
    standard Concise Software Identifiers.
 
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
 2.  SUIT Manifest Extension
 
    The following CDDL data definition is intended to be used as an
@@ -96,6 +102,17 @@ Table of Contents
    such as Resources, Processors and Targets of input nodes and output
    nodes are covered by the SUIT Information Model and Architecture
    [I-D.ietf-suit-architecture].
+
+
+
+
+
+
+
+Birkholz                Expires January 19, 2019                [Page 2]
+
+Internet-Draft            CoSWID SUIT Extension                July 2018
+
 
 3.  SUIT Manifest Resource Data Definition
 
@@ -106,14 +123,6 @@ $$payload-extension  //= (suit.manifest-entry,)
 $$evidence-extension  //= (suit.manifest-entry,)
 
 suit-manifest = {
-
-
-
-Birkholz                Expires January 19, 2019                [Page 2]
-
-Internet-Draft            CoSWID SUIT Extension                July 2018
-
-
   suit.manifest-version,
   suit.digest-info,
   suit.text-reference,
@@ -153,6 +162,14 @@ suit.uuid = bstr .size 16
 suit.time-condition = (66: [ + [ suit.install-after / suit.best-before,
                                  suit.timestamp,
                                ]
+
+
+
+Birkholz                Expires January 19, 2019                [Page 3]
+
+Internet-Draft            CoSWID SUIT Extension                July 2018
+
+
                            ]
                       )
 suit.install-after = 0
@@ -162,14 +179,6 @@ suit.image-condition = (67: [ + [ suit.current-content / suit.not-current-conten
                                   suit.storage-identifier,
                                   ? suit.digest,
                                 ]
-
-
-
-Birkholz                Expires January 19, 2019                [Page 3]
-
-Internet-Draft            CoSWID SUIT Extension                July 2018
-
-
                             ]
                        )
 suit.current-content = 0
@@ -209,6 +218,14 @@ suit.decrypt = 0
 suit.decompress = 1
 suit.undiff = 2
 suit.relocate = 3
+
+
+
+Birkholz                Expires January 19, 2019                [Page 4]
+
+Internet-Draft            CoSWID SUIT Extension                July 2018
+
+
 suit.unrelocate = 4
 suit.parameters = bytes
 suit.inode = bytes
@@ -218,14 +235,6 @@ suit.targets = (72: [ + [ suit.component-id,
                           ? suit.encoding,
                         ]
                     ]
-
-
-
-Birkholz                Expires January 19, 2019                [Page 4]
-
-Internet-Draft            CoSWID SUIT Extension                July 2018
-
-
                 )
 suit.component-id = [ + bytes ]
 suit.encoding = bytes
@@ -261,6 +270,18 @@ suit.extensions = (73: { + int => bytes } )
               Waltermire, "Concise Software Identifiers", draft-ietf-
               sacm-coswid-06 (work in progress), July 2018.
 
+
+
+
+
+
+
+
+Birkholz                Expires January 19, 2019                [Page 5]
+
+Internet-Draft            CoSWID SUIT Extension                July 2018
+
+
    [I-D.ietf-suit-architecture]
               Moran, B., Meriac, M., Tschofenig, H., and D. Brown, "A
               Firmware Update Architecture for Internet of Things
@@ -273,19 +294,14 @@ suit.extensions = (73: { + int => bytes } )
               Model for Manifests", draft-ietf-suit-information-model-01
               (work in progress), July 2018.
 
-
-
-
-
-Birkholz                Expires January 19, 2019                [Page 5]
-
-Internet-Draft            CoSWID SUIT Extension                July 2018
-
-
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
 Author's Address
 
@@ -296,22 +312,6 @@ Author's Address
    Germany
 
    Email: henk.birkholz@sit.fraunhofer.de
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
