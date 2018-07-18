@@ -1,5 +1,5 @@
 ---
-title: A SUIT Manifest Extension for Concise Software Identifiers 
+title: A SUIT Manifest Extension for Concise Software Identifiers
 abbrev: CoSWID SUIT Extension
 docname: draft-birkholz-suit-coswid-manifest-latest
 stand_alone: true
@@ -26,6 +26,7 @@ author:
 
 normative:
   RFC2119:
+  RFC8174:
   I-D.ietf-sacm-coswid: COSWID
   I-D.ietf-suit-information-model: SUITIM
   I-D.ietf-suit-architecture: SUITARCH
@@ -39,6 +40,8 @@ This document defines a resource extension for Concise Software Identifiers (CoS
 # Introduction
 
 Firmware updates are quite similar to a software update of applications -- composites of software components -- for example, servers or user-devices. The attributes and semantic dependencies as defined by Concise Software Identifies {{-COSWID}} are equivalent. In contrast, location and target definitions as well as the characteristics that are specific to an update campaign of a SUIT require a specific set of addiction information. The semantics regarding SUIT specific information elements are defined by the SUIT Information Model {{-SUITIM}}. Correspondingly, the CoSWID extension defined in this document uses CDDL extension points to add SUIT information elements to the standard Concise Software Identifiers.
+
+{::boilerplate bcp14}
 
 # SUIT Manifest Extension
 
