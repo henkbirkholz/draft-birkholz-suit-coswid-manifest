@@ -49,7 +49,7 @@ The following CDDL data definition is intended to be used as an extension to the
 
 # SUIT Manifest Resource Data Definition
 
-The following CDDL MUST be added to Payload or Evidence Resources via CDDL extension points in order to express SUIT Manifests in Concise Software Identifiers.
+The following CDDL data definition MUST be added to Payload or Evidence Resources via CDDL extension points in order to express SUIT Manifests in Concise Software Identifiers.
 
 ~~~ CDDL
 {::include suit-manifest-resource.cddl}
