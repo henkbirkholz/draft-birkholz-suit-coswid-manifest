@@ -116,8 +116,9 @@ Internet-Draft            CoSWID SUIT Extension                July 2018
 
 3.  SUIT Manifest Resource Data Definition
 
-   The following CDDL can be added to Payload or Evidence Resources as
-   defined by Concise Software Identifiers.
+   The following CDDL MUST be added to Payload or Evidence Resources via
+   CDDL extension points in order to express SUIT Manifests in Concise
+   Software Identifiers.
 
 $$payload-extension  //= (suit.manifest-entry,)
 $$evidence-extension  //= (suit.manifest-entry,)
@@ -161,7 +162,6 @@ suit.device = 2
 suit.uuid = bstr .size 16
 suit.time-condition = (66: [ + [ suit.install-after / suit.best-before,
                                  suit.timestamp,
-                               ]
 
 
 
@@ -170,6 +170,7 @@ Birkholz                Expires January 19, 2019                [Page 3]
 Internet-Draft            CoSWID SUIT Extension                July 2018
 
 
+                               ]
                            ]
                       )
 suit.install-after = 0
@@ -217,7 +218,6 @@ suit.processors = (71: [ + [ suit.decrypt / suit.decompress / suit.undiff / suit
 suit.decrypt = 0
 suit.decompress = 1
 suit.undiff = 2
-suit.relocate = 3
 
 
 
@@ -226,6 +226,7 @@ Birkholz                Expires January 19, 2019                [Page 4]
 Internet-Draft            CoSWID SUIT Extension                July 2018
 
 
+suit.relocate = 3
 suit.unrelocate = 4
 suit.parameters = bytes
 suit.inode = bytes
@@ -245,7 +246,7 @@ suit.extensions = (73: { + int => bytes } )
    This draft is intended to incorporate the extension registry that
    will be defined by Concise Software Identifiers.  Until then, a
    consecutive numbering system in alignment to the labels used in
-   Concise Software Identifiers is used.
+   Concise Software Identifiers is applied.
 
 5.  Security Considerations
 
@@ -269,7 +270,6 @@ suit.extensions = (73: { + int => bytes } )
               Birkholz, H., Fitzgerald-McKay, J., Schmidt, C., and D.
               Waltermire, "Concise Software Identifiers", draft-ietf-
               sacm-coswid-06 (work in progress), July 2018.
-
 
 
 
