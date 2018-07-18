@@ -26,7 +26,7 @@ author:
 
 normative:
   RFC2119:
-  I-D.-ietf-sacm-coswid: COSWID
+  I-D.ietf-sacm-coswid: COSWID
   I-D.ietf-suit-information-model: SUITIM
   I-D.ietf-suit-architecture: SUITARCH
 
